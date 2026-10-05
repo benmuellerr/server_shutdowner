@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "server-shutdowner",
+	"version": "1.0.0",
+	"name": "Server Shutdowner",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/server-shutdowner/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"name.modid.ServerShutdowner"
+		],
+		"client": [
+			"name.modid.client.ServerShutdownerClient"
+		]
+	},
+	"mixins": [
+		"server-shutdowner.mixins.json",
+		{
+			"config": "server-shutdowner.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
